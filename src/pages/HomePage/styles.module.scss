@@ -1,0 +1,45 @@
+@import '../../theme/theme.scss';
+.bg {
+    background-color: $bg-color;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.picWrap{
+    width: 200px;
+    font-size: 0;
+    img {
+        width: 100%;
+    }
+}
+.topBtnWrap {
+    position: relative;
+}
+.topBtnWrap::before{
+    content: '暱稱';
+    display: inline-block;
+    background-color: $bg-color;
+    color: $btn-color;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.nickNameInput {
+    border: 1.5px solid $btn-color;
+    width: 300px;
+    height: 45px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: $bg-color;
+    color: white;
+    text-align: center;
+}
+input:focus {
+    outline:none
+}
