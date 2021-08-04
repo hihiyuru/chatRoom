@@ -1,0 +1,33 @@
+@import '../../../theme/theme.scss';
+.spaceMargin {
+    margin: 10px 0;
+}
+
+.picBtnWrap {
+    display: inline-block;
+    width: 300px;
+    text-decoration: none;
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .chatTitle {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: $btn-color;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .chatText {
+        color: white;
+    }
+    .onlineCount {
+        position: absolute;
+        bottom: 10%;
+        left: 20px;
+        font-size: 12px;
+        color: $smalltext-color;
+    }
+}
