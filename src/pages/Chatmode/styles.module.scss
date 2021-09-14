@@ -1,7 +1,8 @@
-@import '../../theme/theme.scss';
+@import "../../theme/theme.scss";
 .bg {
     background-color: $bg-color;
     min-height: 100vh;
+    min-height: stretch;
     min-width: 100vw;
     display: flex;
     justify-content: center;

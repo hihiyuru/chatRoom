@@ -12,6 +12,7 @@ const HomePage = () => {
     const [isShowInput, setShowInput] = useState(false);
     const [nickName, setNickName] = useState('');
     const [isInputFocus, setIsInputFocus] = useState(false);
+    // const [isMobile, setIsisMobile] = useState(false);
 
     const inputOnFocus = () => {
         setIsInputFocus(true)
@@ -21,10 +22,21 @@ const HomePage = () => {
         setIsInputFocus(false)
     }
 
+    // useEffect(() => {
+    //     try { 
+    //         document.createEvent("TouchEvent"); 
+    //         setIsisMobile(true); 
+    //         console.log('我是觸控', isMobile);
+    //     } catch (e) { 
+    //         setIsisMobile(false); 
+    //         console.log('我不是觸控', isMobile);
+    //     }
+    // }, [isMobile]);
+
     return (
         <div className={styles.bg}>
             <div className={styles.picWrap}>
-                <img src={logo} alt='logo'/>
+                <img src={logo} alt='logo' />
             </div>
             <div onClick={() => setShowInput(true)} className={isShowInput ? styles.topBtnWrap : ''}>
                 {

@@ -1,0 +1,69 @@
+@import "../../theme/theme.scss";
+.bg {
+    background-color: $bg-color;
+    height: 100vh;
+    // height: stretch;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+.textLogo {
+    width: 100px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+        width: 100%;
+    }
+}
+.goBackIcon {
+    width: 44px;
+    img {
+        width: 100%;
+    }
+}
+.pswPic{
+    width: 200px;
+    margin: 15% 0;
+    font-size: 0;
+    img {
+        width: 100%;
+    }
+}
+.topBtnWrap {
+    position: relative;
+}
+.topBtnWrap::before{
+    content: '暱稱';
+    display: inline-block;
+    background-color: $bg-color;
+    color: $btn-color;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pswInput {
+    border: 1.5px solid $btn-color;
+    width: 300px;
+    height: 45px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: $bg-color;
+    color: white;
+    text-align: center;
+}
+input:focus {
+    outline:none
+}

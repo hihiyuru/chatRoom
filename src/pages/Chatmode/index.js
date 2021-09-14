@@ -13,13 +13,16 @@ import randomButtonBg from '../../assets/images/randomButtonBg.png';
 const picButtons = [
     {
         title: '大廳',
-        pic: lobbyButtonBg
+        pic: lobbyButtonBg,
+        chatroomType: 'normal'
     }, {
         title: '密語',
-        pic: passwordButtonBg
+        pic: passwordButtonBg,
+        chatroomType: 'password'
     }, {
         title: '隨緣',
-        pic: randomButtonBg
+        pic: randomButtonBg,
+        chatroomType: 'normal'
     }
 
 ]
@@ -27,7 +30,7 @@ const picButtons = [
 const Chatmode = () => {
 
     const renderPicBtn = () => {
-        return picButtons.map(item => <PicButton title={item.title} pic={item.pic} />)
+        return picButtons.map(item => <PicButton key={item.title} title={item.title} pic={item.pic} chatroomType={item.chatroomType}/>)
     }
 
     return (
