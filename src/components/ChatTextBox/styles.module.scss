@@ -1,0 +1,37 @@
+@import '../../theme/theme.scss';
+.textBox {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: flex-end;
+}
+.localBox {
+    justify-content: flex-end;
+}
+.message {
+    background-color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.localMessage {
+    border-radius: 15px 15px 0 15px;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: $chatBox-color;
+}
+.remoteMessage {
+    border-radius: 15px 15px 15px 0;
+    padding: 10px;
+    margin-right: 10px;
+}
+.timeWrap {
+    font-size: 10px;
+    color: white;
+    
+}
+.remoteTimeWrap {
+    margin-right: 10%;
+}
+.localTimeWrap {
+    margin-left: 10%;
+    order: -1;
+}

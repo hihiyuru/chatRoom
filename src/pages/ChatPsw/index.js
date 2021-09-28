@@ -31,7 +31,7 @@ const Chatmode = () => {
                 </div>
                 {
                     pswString ?
-                        <Link to="/ChatPsw/PswSearchPerson">
+                        <Link to={`/ChatPsw/PswSearchPerson?chatRoomName=${pswString}`}>
                             <CustButton text="尋找聊客" color={pswString ? 'rgb(53, 63, 103)' : '#fbd900'} backgroundColor={pswString ? '#fbd900' : 'rgb(53, 63, 103)'} border={pswString ? '0px' : '1.5px solid #fbd900'} />
                         </Link> :
                         <CustButton text="尋找聊客" color={pswString ? 'rgb(53, 63, 103)' : '#fbd900'} backgroundColor={pswString ? '#fbd900' : 'rgb(53, 63, 103)'} border={pswString ? '0px' : '1.5px solid #fbd900'} />

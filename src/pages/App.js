@@ -17,21 +17,20 @@ function App() {
 
   return (
     <HashRouter>
-      <div className={styles.App}>
+      <div className={styles.App} style={{backgroundColor: '#353F67'}}>
         <section className={styles.content}>
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/Chatmode" exact component={Chatmode} />
-            <Route path="/ChatPsw" exact component={ChatPsw}/>
-            <Route path="/SearchPerson" exact component={SearchPerson}/>
-            <Route path={chatRoute.path} exact component={Chat}/>
-            <Route path="/ChatPsw/PswSearchPerson" exact component={PswSearchPerson}/>
+            <Route path="/ChatPsw" exact component={ChatPsw} />
+            <Route path="/SearchPerson" exact component={SearchPerson} />
+            <Route path={chatRoute.path} exact component={Chat} />
+            <Route path="/ChatPsw/PswSearchPerson" exact component={PswSearchPerson} />
             <Route component={NoPage} />
           </Switch>
         </section>
       </div>
     </HashRouter>
-
   );
 }
 
