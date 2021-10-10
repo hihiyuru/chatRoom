@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 import CustButton from '../../components/CustButton'
 
@@ -9,6 +10,8 @@ import logo from '../../assets/images/logo.png';
 
 
 const HomePage = () => {
+    const dispatch = useDispatch();
+
     const [isShowInput, setShowInput] = useState(false);
     const [nickName, setNickName] = useState('');
     const [isInputFocus, setIsInputFocus] = useState(false);
@@ -21,6 +24,13 @@ const HomePage = () => {
         setShowInput(false)
         setIsInputFocus(false)
     }
+
+    useEffect(() => {
+        dispatch({
+            type: 'ADD_NAME',
+            payload: { nickName },
+        });
+    }, [dispatch, nickName])
 
     // useEffect(() => {
     //     try { 

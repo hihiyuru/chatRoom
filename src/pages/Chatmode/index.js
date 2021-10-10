@@ -20,9 +20,9 @@ const picButtons = [
         pic: passwordButtonBg,
         chatroomType: 'password'
     }, {
-        title: '隨緣',
+        title: '天氣',
         pic: randomButtonBg,
-        chatroomType: 'normal'
+        chatroomType: 'weather'
     }
 
 ]

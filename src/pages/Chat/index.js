@@ -1,7 +1,11 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import styles from './styles.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Link, useLocation } from 'react-router-dom';
+import { getWeather } from '../../http'
 
 import { initNormalChat } from '../../fakeData/chatContent'
 import { getCurrentTime } from '../../utils/changeTime'
@@ -20,11 +24,12 @@ const Chat = (props) => {
     function useQuery() {
         return new URLSearchParams(useLocation().search);
     }
+    const dispatch = useDispatch();
+    const nickName = useSelector((state) => state.nickName);
+    const weatherResultData = useSelector((state) => state.weatherResultData);
     const query = useQuery();
-
     const chatRoomName = query.get("chatRoomName")
     const { chatroomType } = props.match.params
-    console.log('chatroomType', chatroomType);
     const otherFeatures = [
         {
             img: picIcon,
@@ -40,15 +45,33 @@ const Chat = (props) => {
             handleClick: (event) => uploadImage(event)
         }
     ]
-    const messagesEndRef = useRef(null)
+    const messagesTopRef = useRef(null);
+    const messagesEndRef = useRef(null);
     const [commentText, setCommentText] = useState("");
     const [currentChats, setCurrentChats] = useState([]);
     const [isShowOtherFeature, setShowOtherFeature] = useState(false);
     const [fileSrc, setFileSrc] = useState("");
 
     useEffect(() => {
-        setCurrentChats(currentChats.concat(initNormalChat))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        messagesTopRef.current.scrollIntoView({ behavior: "auto" })
+        if (chatroomType === 'weather') {
+            fetchWeather();
+            let startWeatherChat = {
+                type: 'remote',
+                contentType: 'text',
+                message: `你好${nickName}，想問目前的天氣嗎？`+ '\n' + `請輸入想查詢的縣市`,
+                time: getCurrentTime()
+            };
+            setCurrentChats([startWeatherChat])
+        } else {
+            setCurrentChats(currentChats.concat(initNormalChat))
+        }
+        return () => {
+            setCurrentChats([])
+            dispatch({
+                type: 'INIT_WEATHER_CHAT',
+            });
+        };
     }, [])
     useEffect(() => {
         if (!fileSrc) return;
@@ -62,9 +85,7 @@ const Chat = (props) => {
         let newChats = [...currentChats, newMessage]
         setCurrentChats(newChats);
         messagesEndRef.current.scrollIntoView({ behavior: "auto" })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fileSrc])
-
 
     const renderLockTitle = () => {
         if (chatroomType !== 'passwordRoom') return;
@@ -79,27 +100,64 @@ const Chat = (props) => {
     const showOtherFeature = () => {
         setShowOtherFeature(!isShowOtherFeature)
     }
-    const sendMessage = () => {
-        let newMessage = {
+    const sendMessage = async () => {
+        let localNewMessage = {
             type: 'local',
             contentType: 'text',
             message: commentText,
             time: getCurrentTime()
         }
-        let newChats = [...currentChats, newMessage]
-        setCurrentChats(newChats)
+        if (chatroomType === 'weather') {
+            let filterNewWeatherData = weatherResultData.filter(weatherItem => weatherItem.locationName === commentText);
+            if (filterNewWeatherData.length === 0) {
+                let remoteNewMessage = {
+                    type: 'remote',
+                    contentType: 'text',
+                    message: '請輸入您想查詢的縣市',
+                    time: getCurrentTime()
+                }
+                let newChats = [...currentChats, localNewMessage, remoteNewMessage]
+                setCurrentChats(newChats)
+            } else {
+                const { weatherElement } = filterNewWeatherData[0]
+                let remoteWeatherText = 
+                `天氣狀況：${weatherElement[0].time[0].parameter.parameterName}`+`\n`+
+                `降雨機率：${weatherElement[1].time[0].parameter.parameterName}%`+`\n`+
+                `氣溫：${weatherElement[2].time[0].parameter.parameterName}°C ～ ${weatherElement[4].time[0].parameter.parameterName}°C`+`\n`+
+                `體感：${weatherElement[3].time[0].parameter.parameterName}`+`\n`
+                let remoteNewMessage = {
+                    type: 'remote',
+                    contentType: 'text',
+                    message: remoteWeatherText,
+                    time: getCurrentTime()
+                }
+                let newChats = [...currentChats, localNewMessage, remoteNewMessage]
+                setCurrentChats(newChats)
+            }
+        } else {
+            let newChats = [...currentChats, localNewMessage]
+            setCurrentChats(newChats)
+        }
         setCommentText('')
         messagesEndRef.current.scrollIntoView({ behavior: "auto" })
+
     }
     const uploadImage = (event) => {
         if (!event.target.files[0]) return;
         setFileSrc(URL.createObjectURL(event.target.files[0]));
     }
+    const fetchWeather = async () => {
+        let fetchWeatherData = await getWeather({Authorization: 'CWB-CB840577-3B39-4B28-816C-CBDB487D93A1'})
+        dispatch({
+            type: 'FETCH_WETHER_DATA',
+            payload: { weatherResult: fetchWeatherData.records.location}
+        });
+    }
 
     return (
         <div className={styles.bg} style={{ backgroundColor: '#353F67' }}>
             <>
-                <div className={styles.titleWrap} style={{ backgroundColor: '#252B45' }}>
+                <div className={styles.titleWrap} style={chatroomType === 'passwordRoom' ? { backgroundColor: '#323f6a' } : { backgroundColor: '#252B45' }}>
                     <Link to='/Chatmode'>
                         <p>離開</p>
                     </Link>
@@ -107,7 +165,8 @@ const Chat = (props) => {
                 </div>
                 {renderLockTitle()}
             </>
-            <div className={styles.chatViewWrap} style={chatroomType === 'passwordRoom' ? { backgroundColor: '#303b64', paddingTop: '94px' } : { backgroundColor: '#303b64'}}>
+            <div className={styles.messagesTop} ref={messagesTopRef} />
+            <div className={styles.chatViewWrap} style={chatroomType === 'passwordRoom' ? { backgroundColor: '#242b47', paddingTop: '94px' } : { backgroundColor: '#303b64' }}>
                 {
                     currentChats.map((chatItem, index) => {
                         const { type, contentType, message, time } = chatItem
@@ -118,7 +177,7 @@ const Chat = (props) => {
                 }
                 <div className={styles.messagesEnd} ref={messagesEndRef} />
             </div>
-            <div className={styles.footerWrap} style={{ backgroundColor: '#6E7591' }}>
+            <div className={styles.footerWrap} style={chatroomType === 'passwordRoom' ? { backgroundColor: '#62677b' } : {backgroundColor: '#6E7591'}}>
                 <div className={styles.inputWrap}>
                     <div className={isShowOtherFeature ? styles.addIconWrapActive : styles.addIconWrap}>
                         <img src={addIcon} alt="其他功能按鍵" onClick={showOtherFeature} />
