@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from './styles.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Link, useLocation } from 'react-router-dom';
-import { getWeather } from '../../http'
 
 import { initNormalChat } from '../../fakeData/chatContent'
 import { getCurrentTime } from '../../utils/changeTime'
@@ -19,6 +18,7 @@ import sendPlen from '../../assets/images/sendPlen.png';
 import lock from '../../assets/images/lock.png'
 
 import ChatTextBox from '../../components/ChatTextBox/index';
+import { getWeatherAsync } from '../../store/rootReducer';
 
 const Chat = (props) => {
     function useQuery() {
@@ -146,12 +146,8 @@ const Chat = (props) => {
         if (!event.target.files[0]) return;
         setFileSrc(URL.createObjectURL(event.target.files[0]));
     }
-    const fetchWeather = async () => {
-        let fetchWeatherData = await getWeather({Authorization: 'CWB-CB840577-3B39-4B28-816C-CBDB487D93A1'})
-        dispatch({
-            type: 'FETCH_WETHER_DATA',
-            payload: { weatherResult: fetchWeatherData.records.location}
-        });
+    const fetchWeather = () => {
+        dispatch(getWeatherAsync());
     }
 
     return (

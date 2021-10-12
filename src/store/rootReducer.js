@@ -1,3 +1,5 @@
+import { getWeather } from '../http'
+
 const initialState = {
     nickName: '匿名者',
     currentAllChats: [],
@@ -33,3 +35,13 @@ export const rootReducer = (state = initialState, action) => {
             return state;
     }
 };
+
+export const getWeatherAsync = () => {
+    return async(dispatch) => {
+        let fetchWeatherData = await getWeather({Authorization: 'CWB-CB840577-3B39-4B28-816C-CBDB487D93A1'})
+        dispatch({
+            type: 'FETCH_WETHER_DATA',
+            payload: { weatherResult: fetchWeatherData.records.location}
+        });
+    }
+}
