@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/chatRoom/static/css/main.465c1744.chunk.css",
-    "main.js": "/chatRoom/static/js/main.c06c2045.chunk.js",
-    "main.js.map": "/chatRoom/static/js/main.c06c2045.chunk.js.map",
-    "runtime-main.js": "/chatRoom/static/js/runtime-main.de17bf41.js",
-    "runtime-main.js.map": "/chatRoom/static/js/runtime-main.de17bf41.js.map",
-    "static/js/2.fcf69545.chunk.js": "/chatRoom/static/js/2.fcf69545.chunk.js",
-    "static/js/2.fcf69545.chunk.js.map": "/chatRoom/static/js/2.fcf69545.chunk.js.map",
-    "static/js/3.9b64af6b.chunk.js": "/chatRoom/static/js/3.9b64af6b.chunk.js",
-    "static/js/3.9b64af6b.chunk.js.map": "/chatRoom/static/js/3.9b64af6b.chunk.js.map",
+    "main.js": "/chatRoom/static/js/main.57042359.chunk.js",
+    "main.js.map": "/chatRoom/static/js/main.57042359.chunk.js.map",
+    "runtime-main.js": "/chatRoom/static/js/runtime-main.acac02a2.js",
+    "runtime-main.js.map": "/chatRoom/static/js/runtime-main.acac02a2.js.map",
+    "static/js/2.62a507ab.chunk.js": "/chatRoom/static/js/2.62a507ab.chunk.js",
+    "static/js/2.62a507ab.chunk.js.map": "/chatRoom/static/js/2.62a507ab.chunk.js.map",
+    "static/js/3.6cca62b9.chunk.js": "/chatRoom/static/js/3.6cca62b9.chunk.js",
+    "static/js/3.6cca62b9.chunk.js.map": "/chatRoom/static/js/3.6cca62b9.chunk.js.map",
     "index.html": "/chatRoom/index.html",
     "static/css/main.465c1744.chunk.css.map": "/chatRoom/static/css/main.465c1744.chunk.css.map",
-    "static/js/2.fcf69545.chunk.js.LICENSE.txt": "/chatRoom/static/js/2.fcf69545.chunk.js.LICENSE.txt",
+    "static/js/2.62a507ab.chunk.js.LICENSE.txt": "/chatRoom/static/js/2.62a507ab.chunk.js.LICENSE.txt",
     "static/media/lobbyButtonBg.8f8f59f8.png": "/chatRoom/static/media/lobbyButtonBg.8f8f59f8.png",
     "static/media/logo.90c9e81a.png": "/chatRoom/static/media/logo.90c9e81a.png",
     "static/media/logoWithoutText.d1e83905.png": "/chatRoom/static/media/logoWithoutText.d1e83905.png",
@@ -20,9 +20,9 @@
     "static/media/randomButtonBg.21600954.png": "/chatRoom/static/media/randomButtonBg.21600954.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.de17bf41.js",
-    "static/js/2.fcf69545.chunk.js",
+    "static/js/runtime-main.acac02a2.js",
+    "static/js/2.62a507ab.chunk.js",
     "static/css/main.465c1744.chunk.css",
-    "static/js/main.c06c2045.chunk.js"
+    "static/js/main.57042359.chunk.js"
   ]
 }
