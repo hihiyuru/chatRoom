@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/chatRoom/static/css/main.465c1744.chunk.css",
+    "main.js": "/chatRoom/static/js/main.c06c2045.chunk.js",
+    "main.js.map": "/chatRoom/static/js/main.c06c2045.chunk.js.map",
+    "runtime-main.js": "/chatRoom/static/js/runtime-main.de17bf41.js",
+    "runtime-main.js.map": "/chatRoom/static/js/runtime-main.de17bf41.js.map",
+    "static/js/2.fcf69545.chunk.js": "/chatRoom/static/js/2.fcf69545.chunk.js",
+    "static/js/2.fcf69545.chunk.js.map": "/chatRoom/static/js/2.fcf69545.chunk.js.map",
+    "static/js/3.9b64af6b.chunk.js": "/chatRoom/static/js/3.9b64af6b.chunk.js",
+    "static/js/3.9b64af6b.chunk.js.map": "/chatRoom/static/js/3.9b64af6b.chunk.js.map",
+    "index.html": "/chatRoom/index.html",
+    "static/css/main.465c1744.chunk.css.map": "/chatRoom/static/css/main.465c1744.chunk.css.map",
+    "static/js/2.fcf69545.chunk.js.LICENSE.txt": "/chatRoom/static/js/2.fcf69545.chunk.js.LICENSE.txt",
+    "static/media/lobbyButtonBg.8f8f59f8.png": "/chatRoom/static/media/lobbyButtonBg.8f8f59f8.png",
+    "static/media/logo.90c9e81a.png": "/chatRoom/static/media/logo.90c9e81a.png",
+    "static/media/logoWithoutText.d1e83905.png": "/chatRoom/static/media/logoWithoutText.d1e83905.png",
+    "static/media/passwordButtonBg.e25fbede.png": "/chatRoom/static/media/passwordButtonBg.e25fbede.png",
+    "static/media/psw.ab7020d9.png": "/chatRoom/static/media/psw.ab7020d9.png",
+    "static/media/randomButtonBg.21600954.png": "/chatRoom/static/media/randomButtonBg.21600954.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de17bf41.js",
+    "static/js/2.fcf69545.chunk.js",
+    "static/css/main.465c1744.chunk.css",
+    "static/js/main.c06c2045.chunk.js"
+  ]
+}
