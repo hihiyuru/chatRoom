@@ -6,8 +6,7 @@ const ALL_CHATROOM = [
     '武漢肺炎',
     'Netflix',
     '妹子',
-    '健身',
-    'aa'
+    '健身'
 ]
 
 export default ALL_CHATROOM
