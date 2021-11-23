@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/chatRoom/static/css/main.465c1744.chunk.css",
-    "main.js": "/chatRoom/static/js/main.57042359.chunk.js",
-    "main.js.map": "/chatRoom/static/js/main.57042359.chunk.js.map",
-    "runtime-main.js": "/chatRoom/static/js/runtime-main.acac02a2.js",
-    "runtime-main.js.map": "/chatRoom/static/js/runtime-main.acac02a2.js.map",
-    "static/js/2.62a507ab.chunk.js": "/chatRoom/static/js/2.62a507ab.chunk.js",
-    "static/js/2.62a507ab.chunk.js.map": "/chatRoom/static/js/2.62a507ab.chunk.js.map",
-    "static/js/3.6cca62b9.chunk.js": "/chatRoom/static/js/3.6cca62b9.chunk.js",
-    "static/js/3.6cca62b9.chunk.js.map": "/chatRoom/static/js/3.6cca62b9.chunk.js.map",
+    "main.css": "/chatRoom/static/css/main.97daaef2.chunk.css",
+    "main.js": "/chatRoom/static/js/main.06d37e21.chunk.js",
+    "main.js.map": "/chatRoom/static/js/main.06d37e21.chunk.js.map",
+    "runtime-main.js": "/chatRoom/static/js/runtime-main.f29caace.js",
+    "runtime-main.js.map": "/chatRoom/static/js/runtime-main.f29caace.js.map",
+    "static/js/2.b3a992ca.chunk.js": "/chatRoom/static/js/2.b3a992ca.chunk.js",
+    "static/js/2.b3a992ca.chunk.js.map": "/chatRoom/static/js/2.b3a992ca.chunk.js.map",
+    "static/js/3.01ccd747.chunk.js": "/chatRoom/static/js/3.01ccd747.chunk.js",
+    "static/js/3.01ccd747.chunk.js.map": "/chatRoom/static/js/3.01ccd747.chunk.js.map",
     "index.html": "/chatRoom/index.html",
-    "static/css/main.465c1744.chunk.css.map": "/chatRoom/static/css/main.465c1744.chunk.css.map",
-    "static/js/2.62a507ab.chunk.js.LICENSE.txt": "/chatRoom/static/js/2.62a507ab.chunk.js.LICENSE.txt",
+    "static/css/main.97daaef2.chunk.css.map": "/chatRoom/static/css/main.97daaef2.chunk.css.map",
+    "static/js/2.b3a992ca.chunk.js.LICENSE.txt": "/chatRoom/static/js/2.b3a992ca.chunk.js.LICENSE.txt",
     "static/media/lobbyButtonBg.8f8f59f8.png": "/chatRoom/static/media/lobbyButtonBg.8f8f59f8.png",
     "static/media/logo.90c9e81a.png": "/chatRoom/static/media/logo.90c9e81a.png",
     "static/media/logoWithoutText.d1e83905.png": "/chatRoom/static/media/logoWithoutText.d1e83905.png",
@@ -20,9 +20,9 @@
     "static/media/randomButtonBg.21600954.png": "/chatRoom/static/media/randomButtonBg.21600954.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.acac02a2.js",
-    "static/js/2.62a507ab.chunk.js",
-    "static/css/main.465c1744.chunk.css",
-    "static/js/main.57042359.chunk.js"
+    "static/js/runtime-main.f29caace.js",
+    "static/js/2.b3a992ca.chunk.js",
+    "static/css/main.97daaef2.chunk.css",
+    "static/js/main.06d37e21.chunk.js"
   ]
 }
